@@ -23,74 +23,58 @@
         android:textAlignment="center"
         android:id="@+id/tvTitulo" />
 
+    <Button
+        android:text="+"
+        android:layout_width="25pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/btMais"
+        android:onClick="calcular"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="-"
+        android:layout_width="25pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/btMenos"
+        android:onClick="calcular"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btMais"
+        android:layout_toEndOf="@+id/btMais" />
+
+    <Button
+        android:text="*"
+        android:layout_width="25pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/btMult"
+        android:onClick="calcular"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btMenos"
+        />
+
+    <Button
+        android:text="/"
+        android:layout_width="25pt"
+        android:layout_height="wrap_content"
+        android:id="@+id/btDiv"
+        android:onClick="calcular"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btMult"
+        android:layout_toEndOf="@+id/btMult" />
+
     <TextView
         android:text="Resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btMais"
-        android:layout_alignLeft="@+id/edValor1"
-        android:layout_alignStart="@+id/edValor1"
-        android:layout_marginTop="51dp"
         android:id="@+id/tvResultado"
         android:textAlignment="center"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:id="@+id/btMais"
-        android:layout_below="@+id/edValor1"
-        android:layout_toStartOf="@+id/btMult"
-        android:layout_alignRight="@+id/btMenos"
-        android:layout_alignEnd="@+id/btMenos"
-        android:onClick="calcular" />
-
-    <Button
-        android:text="-"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btMenos"
-        android:layout_below="@+id/btMais"
+        android:layout_above="@+id/btMais"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="calcular" />
-
-    <Button
-        android:text="*"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btMult"
-        android:layout_above="@+id/btDiv"
-        android:layout_toRightOf="@+id/btMenos"
-        android:layout_toEndOf="@+id/btMenos"
-        android:onClick="calcular" />
-
-    <Button
-        android:text="/"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btDiv"
-        android:layout_alignBaseline="@+id/btMenos"
-        android:layout_alignBottom="@+id/btMenos"
-        android:layout_toRightOf="@+id/btMais"
-        android:layout_toEndOf="@+id/btMais"
-        android:onClick="calcular" />
-
-    <TextView
-        android:text="Valor 2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvValor2"
-        android:layout_toLeftOf="@+id/btMult"
-        android:layout_toStartOf="@+id/btMult"
-        android:layout_alignTop="@+id/textView9"
-        android:layout_alignParentStart="false"
-        tools:layout_alignTop="@+id/edValor2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="-25px" />
+        android:layout_marginBottom="51dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -98,21 +82,19 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/edValor2"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentStart="true"
-        tools:layout_below="@+id/textView9" />
-
-    <TextView
-        android:text="Valor 1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvValor1"
-        android:layout_below="@+id/edValor2"
+        android:layout_above="@+id/tvResultado"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/edValor1"
-        android:layout_marginTop="-25px" />
+        android:layout_marginBottom="19dp" />
+
+    <TextView
+        android:text="Valor 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValor2"
+        android:layout_above="@+id/edValor2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -120,8 +102,17 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/edValor1"
-        android:layout_below="@+id/edValor2"
+        android:layout_above="@+id/tvValor2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30px" />
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:text="Valor 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValor1"
+        android:layout_above="@+id/edValor1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
